@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit A Product</title>
+  </head>
+  <body>
+    <h1>Edit A Product</h1>
+    <form method="POST" action="/products/<%= product._id %>?_method=PUT">
+      <section>
+        <label for="name"><b>Name</b></label>
+        <br />
+        <input id="name" type="text" name="name" placeholder="Product Name" value="<%= product.name %>" />
+      </section>
+      <br />
+      <section>
+        <label for="price"><b>Price (Unit)</b></label>
+        <br />
+        <input id="price" type="number" name="price" placeholder="Price" value="<%= product.price %>" step="0.1" />
+      </section>
+      <br />
+      <section>
+        <fieldset style="border: none; padding: 0; margin: 0">
+          <legend><b>Category</b></legend>
+          <div>
+            <input type="radio" id="fruit" name="category" value="fruit" <%= product.category === 'fruit' ? 'checked' :
+            null %> />
+            <label for="fruit">fruit</label>
+          </div>
+          <div>
+            <input type="radio" id="vegetable" name="category" value="vegetable" <%= product.category === 'vegetable' ?
+            'checked' : null %>/>
+            <label for="vegetable">vegetable</label>
+          </div>
+          <div>
+            <input type="radio" id="dairy" name="category" value="dairy" <%= product.category === 'dairy' ? 'checked' :
+            null %>/>
+            <label for="dairy">dairy</label>
+          </div>
+        </fieldset>
+      </section>
+      <br />
+      <button>Edit</button>
+    </form>
+    <br />
+    <a href="/products/<%= product._id %>">Cancel</a>
+  </body>
+</html>
