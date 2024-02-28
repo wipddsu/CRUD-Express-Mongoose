@@ -6,12 +6,16 @@
     <title>All Products</title>
   </head>
   <body>
-    <h1>All Products</h1>
+    <h1><%= category %> Products</h1>
     <ul>
       <% for(const p of products) {%>
       <li><a href="products/<%= p._id %>"><%= p.name %></a></li>
       <% } %>
     </ul>
-    <a href="/products/new">Add A Product</a>
+    <a href="/products/new">Add A Product +</a>
+    <br />
+    <% if(category !== 'All') {%>
+    <a href="/products">All Products</a>
+    <% } %>
   </body>
 </html>
