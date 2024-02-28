@@ -23,18 +23,12 @@
       <section>
         <fieldset style="border: none; padding: 0; margin: 0">
           <legend><b>Category</b></legend>
+          <% for(const category of categories) {%>
           <div>
-            <input type="radio" id="fruit" name="category" value="fruit" checked />
-            <label for="fruit">fruit</label>
+            <input type="radio" id="<%= category %>" value="<%= category %>" name="category" />
+            <label for="<%= category %>"><%= category %></label>
           </div>
-          <div>
-            <input type="radio" id="vegetable" name="category" value="vegetable" />
-            <label for="vegetable">vegetable</label>
-          </div>
-          <div>
-            <input type="radio" id="dairy" name="category" value="dairy" />
-            <label for="dairy">dairy</label>
-          </div>
+          <% } %>
         </fieldset>
       </section>
       <br />
